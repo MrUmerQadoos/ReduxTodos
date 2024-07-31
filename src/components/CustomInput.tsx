@@ -28,7 +28,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
   };
 
   return (
-    <div className="relative flex items-center w-[540px] h-[67px] bg-white dark:bg-[#25273d] dark:border-border-dark">
+    <div className=" p-2 relative flex items-center w-[540px] h-[67px] bg-white dark:bg-[#25273d] dark:border-border-dark">
       <input
         type="text"
         placeholder={placeholder}
@@ -39,7 +39,7 @@ const CustomInput: React.FC<CustomInputProps> = ({
       />
       <IoArrowForward
         onClick={onEnter}
-        className="absolute right-2 text-lg text-gray-400 dark:text-gray-300 hover:text-gray-300 dark:hover:text-gray-100 cursor-pointer transition-colors duration-300"
+        className=" text-lg text-gray-400 dark:text-gray-300 hover:text-gray-300 dark:hover:text-gray-100 cursor-pointer transition-colors duration-300"
       />
     </div>
   );

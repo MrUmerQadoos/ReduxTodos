@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 interface Todo {
   id: number;
   text: string;
+  isCompleted: boolean; // Add this property
 }
 
 interface TodoState {
@@ -35,8 +36,15 @@ export const todoSlice = createSlice({
     resetTodo: (state) => {
       state.todoList = [];
     },
+    toggleTodo: (state, action) => {
+      // Add this action
+      const todo = state.todoList.find((item) => item.id === action.payload);
+      if (todo) {
+        todo.isCompleted = !todo.isCompleted;
+      }
+    },
   },
 });
 
-export const { addTodo, deleteTodo, resetTodo } = todoSlice.actions;
+export const { addTodo, deleteTodo, resetTodo, toggleTodo } = todoSlice.actions;
 export default todoSlice.reducer;

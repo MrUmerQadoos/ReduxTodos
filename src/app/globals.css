@@ -29,6 +29,8 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
+    --circle-gradient-from: #66c8fe;
+    --circle-gradient-to: #b269f4;
   }
 
   .dark {
@@ -65,5 +67,38 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Circle styling */
+  .todo-circle {
+    @apply w-8 h-8 rounded-full flex items-center justify-center cursor-pointer;
+    background: linear-gradient(
+      to right,
+      var(--circle-gradient-from),
+      var(--circle-gradient-to)
+    );
+  }
+
+  .todo-circle-icon {
+    @apply text-white text-lg;
+  }
+
+  /* Button styling */
+  .todo-filter-button {
+    @apply py-1 px-4 rounded;
+    background: var(--background);
+    color: var(--foreground);
+  }
+
+  .todo-filter-button-active {
+    @apply bg-blue-500 text-white;
+  }
+
+  .todo-filter-button-inactive {
+    @apply bg-gray-200;
+  }
+
+  .clear-completed-button {
+    @apply py-1 px-4 rounded bg-red-500 text-white mt-2;
   }
 }
